@@ -2,10 +2,7 @@ package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class GradeCalculatorController {
 
@@ -44,16 +41,20 @@ public class GradeCalculatorController {
     	// assuming that the coding challenges are worth 25% towards the course grade
     	// assuming that there are 15 required coding challenges
     	int requiredcodingChallengesPassed = requiredcodingChallengesChoiceBox.getValue();
-    	courseGrade += (requiredcodingChallengesPassed*100/15)* .125;
+    	courseGrade += (requiredcodingChallengesPassed*15/15)* 1.25;
     	System.out.println("Coding challenges passed: " + requiredcodingChallengesPassed +
     			" Course grade so far: " + courseGrade);
     	// assuming that there are 5 optional coding challenges
     	int optionalcodingChallengesPassed = optionalcodingChallengesChoiceBox.getValue();
-    	courseGrade += (optionalcodingChallengesPassed*100/5)* .125;
+    	courseGrade += (optionalcodingChallengesPassed*5/5)* 1.25;
+    	System.out.println("Coding challenges passed: " + optionalcodingChallengesPassed +
+    			" Course grade so far: " + courseGrade);
     	
     	// Display	result of calculation to the user in the window
     	// Display result to two digits after decimal point
-    	courseGradeLabel.setText(String.format("Your overall course grade is: %.2f" , courseGrade));
+    	courseGradeLabel.setText(String.format("Your overall grade is: %.2f" , courseGrade));
+    	
+    	
     	
     }
 
