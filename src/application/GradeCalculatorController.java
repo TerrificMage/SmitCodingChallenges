@@ -21,9 +21,6 @@ public class GradeCalculatorController {
     
     @FXML
     private Label courseGradeLabel;
-    
-    @FXML
-    Label projectErrorLabel;
 
     @FXML
     void calculateGrade(ActionEvent event) {
