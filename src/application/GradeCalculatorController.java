@@ -28,7 +28,7 @@ public class GradeCalculatorController {
     	
     	// assuming that the project is worth 50% towards the course grade
     	String projectGrade = projectGradeTextfield.getText();
-    	courseGrade= courseGrade + Double.parseDouble(projectGrade) * 50/100;
+    	courseGrade= courseGrade + Double.parseDouble(projectGrade) * 40/100;
     	System.out.println("Project grade entered: " + projectGrade +
     			" Course grade so far: " + courseGrade);
     	// assuming that the quizzes is worth 25% towards the course grade.
@@ -41,7 +41,7 @@ public class GradeCalculatorController {
     	// assuming that the coding challenges are worth 25% towards the course grade.
     	// assuming that there are 15 required coding challenges
     	int requiredcodingChallengesPassed = requiredcodingChallengesChoiceBox.getValue();
-    	courseGrade += (requiredcodingChallengesPassed*15/15)* 1.25;
+    	courseGrade += (requiredcodingChallengesPassed*15/15)* .3;
     	System.out.println("Coding challenges passed: " + requiredcodingChallengesPassed +
     			" Course grade so far: " + courseGrade);
     	// assuming that there are 5 optional coding challenges.
