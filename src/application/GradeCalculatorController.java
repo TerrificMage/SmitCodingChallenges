@@ -38,7 +38,7 @@ public class GradeCalculatorController {
     	System.out.println("Quiz grade entered: " + quizGrade +
     			" Course grade so far: " + courseGrade);
     	
-    	// assuming that the coding challenges are worth 25% towards the course grade
+    	// assuming that the coding challenges are worth 25% towards the course grade.
     	// assuming that there are 15 required coding challenges
     	int requiredcodingChallengesPassed = requiredcodingChallengesChoiceBox.getValue();
     	courseGrade += (requiredcodingChallengesPassed*15/15)* 1.25;
