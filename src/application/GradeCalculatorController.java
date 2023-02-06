@@ -26,7 +26,7 @@ public class GradeCalculatorController {
     void calculateGrade(ActionEvent event) {
     	double courseGrade = 0.0;
     	
-    	// assuming that the project is worth 50% towards the course grade.
+    	// assuming that the project is worth 50% towards the course grade
     	String projectGrade = projectGradeTextfield.getText();
     	courseGrade= courseGrade + Double.parseDouble(projectGrade) * 50/100;
     	System.out.println("Project grade entered: " + projectGrade +
@@ -38,7 +38,7 @@ public class GradeCalculatorController {
     	System.out.println("Quiz grade entered: " + quizGrade +
     			" Course grade so far: " + courseGrade);
     	
-    	// assuming that the coding challenges are worth 25% towards the course grade.
+    	// assuming that the coding challenges are worth 25% towards the course grade
     	// assuming that there are 15 required coding challenges
     	int requiredcodingChallengesPassed = requiredcodingChallengesChoiceBox.getValue();
     	courseGrade += (requiredcodingChallengesPassed*15/15)* 1.25;
@@ -50,8 +50,8 @@ public class GradeCalculatorController {
     	System.out.println("Coding challenges passed: " + optionalcodingChallengesPassed +
     			" Course grade so far: " + courseGrade);
     	
-    	// Display	result of calculation to the user in the window.
-    	// Display result to two digits after decimal point.
+    	// Display	result of calculation to the user in the window
+    	// Display result to two digits after decimal point
     	courseGradeLabel.setText(String.format("Your overall grade is: %.2f" , courseGrade));
     	
     	
