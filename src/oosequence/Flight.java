@@ -3,57 +3,52 @@ package oosequence;
 import java.util.Date;
 
 public class Flight {
-    Date departure;
-    Date arrival;
 
-    // Constructor with two arguments
-    public Flight(Date departure, Date arrival) {
-        if (departure == null || arrival == null) {
-            this.departure = departure;
-            this.arrival = arrival;
-        } else if (departure.before(arrival)) {
-            this.departure = departure;
-            this.arrival = arrival;
-        } // else, leave the default value of null for both departure and arrival
-    }
+	private Date departure;
+	private Date arrival;
 
-    // Copy constructor
-    public Flight(Flight flight) {
-        this.departure = flight.departure;
-        this.arrival = flight.arrival;
-    }
+	public Flight(Date givenDeparture, Date givenArrival) {
+		if (givenDeparture == null || givenArrival == null) {
+			departure = givenDeparture;
+			arrival = givenArrival;   
+		}
 
-    // Getter for departure
-    public Date getDeparture() {
-        return departure;
-    }
+		else if (givenDeparture.before(givenArrival)) {
 
-    // Setter for departure
-    public void setDeparture(Date departure) {
-        if (departure == null || this.arrival == null || departure.before(this.arrival)) {
-            this.departure = departure;
-        }
-    }
+			departure = givenDeparture;
+			arrival = givenArrival;
 
-    // Getter for arrival
-    public Date getArrival() {
-        return arrival;
-    }
+		}
+	}
+	public Flight(Flight c) {
+		departure = c.departure;
+		arrival = c.arrival;
+	}
+	public long length() {
+		if(departure==null) return 0;
+		if(departure!=null & arrival!=null ) {
+			long departTime = departure.getTime();
+			long arriveTime = arrival.getTime();
+			long diff = (arriveTime-departTime)/60000;
+			return diff;
+		}		
+		return 0;
+	}
+	public Date getDeparture() {
+		return departure;
+	}
+	public Date getArrival() {
+		return arrival;
+	}
+	public void setDeparture(Date date) {	
+		if(date == null || arrival == null)departure = date;
 
-    // Setter for arrival
-    public void setArrival(Date arrival) {
-        if (arrival == null || this.departure == null || this.departure.before(arrival)) {
-            this.arrival = arrival;
-        }
-    }
+		else if (date.before(arrival))departure = date;
+	}
+	public void setArrival(Date date) { 
+		if(date == null || departure ==null)arrival = date;
+		
+		else if (departure.before(date))arrival = date;
+	}
 
-    // Method to calculate flight duration in minutes
-    public long length() {
-        if (departure != null && arrival != null) {
-            return (arrival.getTime() - departure.getTime()) / (1000 * 60);
-        }
-        return 0;
-    }
-    
-    
 }

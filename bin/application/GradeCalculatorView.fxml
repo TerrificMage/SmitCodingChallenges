@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.collections.FXCollections?>
 
-<VBox prefHeight="225.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GradeCalculatorController">
+ <VBox prefHeight="225.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GradeCalculatorController">
    <children>
       <HBox>
          <children>
@@ -41,7 +41,7 @@
             <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin></Label>
-            <ChoiceBox fx:id="requiredcodingChallengesChoiceBox" prefWidth="150.0">
+            <ChoiceBox fx:id="requiredCC" prefWidth="150.0">
            <items>
            	<FXCollections fx:factory="observableArrayList">
            		<Integer fx:value="0" />
@@ -72,7 +72,7 @@
             <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin></Label>
-            <ChoiceBox fx:id="optionalcodingChallengesChoiceBox" prefWidth="150.0">
+            <ChoiceBox fx:id="optionalCC" prefWidth="150.0">
            <items>
            	<FXCollections fx:factory="observableArrayList">
            		<Integer fx:value="0" />
@@ -95,7 +95,7 @@
 				<HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin></Label>
-            		<ChoiceBox fx:id="RequiredquizzesChoiceBox" prefWidth="150.0">
+            		<ChoiceBox fx:id="quizzesCompletedChoiceBox" prefWidth="150.0">
            			<items>
            	<FXCollections fx:factory="observableArrayList">
            		
@@ -118,8 +118,8 @@
            	</FXCollections>
            	 </items>
            	</ChoiceBox>
-           	 <Button fx:id="ReqcalculateGradeButton" mnemonicParsing="false" onAction="#getReqQuizGrades" text="Required quiz grade average" /> 
-           		<Label fx:id="ReqQuizAvg" text= "Average: 0.0">
+           	 <Button fx:id="ReqcalculateGradeButton" mnemonicParsing="false" onAction="#getQuizGrades" text="Required quiz grade average" /> 
+           		<Label fx:id="requiredQuizAvg" text= "Average: 0.0">
           		<HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -135,7 +135,7 @@
 				<HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin></Label>
-            		<ChoiceBox fx:id="OptionalquizzesChoiceBox" prefWidth="150.0">
+            		<ChoiceBox fx:id="optionalquizzesCompletedChoiceBox" prefWidth="150.0">
            			<items>
            	<FXCollections fx:factory="observableArrayList">
            		
@@ -144,12 +144,14 @@
            		<Integer fx:value="3" />
            		<Integer fx:value="4" />
            		<Integer fx:value="5" />
+           		<Integer fx:value="6" />
+           		<Integer fx:value="7" />
            		
            </FXCollections>		
             </items>
             </ChoiceBox>
-           	<Button fx:id="OptcalculateGradeButton" mnemonicParsing="false" onAction="#getOptQuizGrades" text="Optional quiz grade average" />	
-           	<Label fx:id="OptQuizAvG" text= "Average: 0.0">
+           	<Button fx:id="OptcalculateGradeButton" mnemonicParsing="false" onAction="#getQuizGrades" text="Optional quiz grade average" />	
+           	<Label fx:id="optionalQuizAvg" text= "Average: 0.0">
           		<HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
